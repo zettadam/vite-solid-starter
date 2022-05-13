@@ -8,21 +8,18 @@ import solid from 'vite-plugin-solid'
 const unitTestsExclude = ['coverage', 'node_modules', 'public', 'reports']
 
 function useHttps() {
-  let https = false
+  let https: object = {}
 
   try {
     https = {
       key: fs.readFileSync('../.cert/key.pem'),
       cert: fs.readFileSync('../.cert/cert.pem'),
     }
-  } catch (e) {
-    https = false
-  }
+  } catch (e) {}
 
   return https
 }
 
-// https://vitejs.dev/config/
 export default defineConfig({
   build: {
     minify: false,
@@ -39,7 +36,7 @@ export default defineConfig({
     coverage: {
       all: true,
       src: ['src'],
-      exclude: ['**.config.js', '**/__tests__'],
+      exclude: ['**.config.ts', '**/__tests__'],
     },
     // solid needs to be inline to work around
     // a resolution issue in vitest:
