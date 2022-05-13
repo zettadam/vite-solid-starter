@@ -48,5 +48,12 @@
       "npm run prettier:fix",
       "npm run lint"
     ]
+  },
+  "pnpm": {
+    "peerDependencyRules": {
+      "ignoreMissing": [
+        "postcss"
+      ]
+    }
   }
 }
