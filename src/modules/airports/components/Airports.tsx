@@ -1,8 +1,8 @@
 const Airports = () => {
   return (
     <main>
-      <header>
-        <h2>Airports</h2>
+      <header class="main-header">
+        <h2 class="main-heading">Airports</h2>
       </header>
     </main>
   )

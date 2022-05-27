@@ -12,7 +12,7 @@ const CountryDetails = () => {
 
   return (
     <div class="details-content">
-      Details for {country() && country().label} will be shown here.
+      <p>Details for {country() && country().label} will be shown here.</p>
       <h4>Airports</h4>
       {airports() ? (
         <ul>
@@ -23,6 +23,9 @@ const CountryDetails = () => {
               </li>
             )}
           </For>
+          <li>
+            <Link href={`/crews/us/something`}>Some airport</Link>
+          </li>
         </ul>
       ) : (
         <p>No airports yet</p>

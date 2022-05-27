@@ -1,4 +1,4 @@
-import { useRoutes } from 'solid-app-router'
+import { Router, useRoutes } from 'solid-app-router'
 
 import routes from '@/app/routes'
 
@@ -10,11 +10,11 @@ import '@/styles/app.css'
 const App = () => {
   const Routes = useRoutes(routes)
   return (
-    <div class="app">
+    <Router>
       <AppHeader />
       <Routes />
       <AppFooter />
-    </div>
+    </Router>
   )
 }
 

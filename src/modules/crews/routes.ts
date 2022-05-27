@@ -15,7 +15,7 @@ const routes: RouteDefinition[] = [
             component: lazy(() => import('./components/CountryDetails')),
           },
           {
-            path: '/:airport',
+            path: '/:airportCode',
             component: lazy(() => import('./components/Airport')),
             children: [
               {

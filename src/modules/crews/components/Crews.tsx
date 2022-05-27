@@ -32,6 +32,9 @@ const Crews = () => {
                   </li>
                 )}
               </For>
+              <li>
+                <Link href={`/crews/something`}>Some country</Link>
+              </li>
             </ul>
           ) : (
             ''

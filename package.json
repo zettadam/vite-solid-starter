@@ -15,7 +15,7 @@
     "test:dev": "vitest dev",
     "test:ci": "vitest run",
     "test:coverage": "vitest run --coverage",
-    "test:e2e": "playwright test",
+    "test:e2e": "CI=true playwright test",
     "test:ui": "vitest --ui"
   },
   "dependencies": {

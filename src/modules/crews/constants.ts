@@ -8,6 +8,12 @@ export interface ICrew {
   label: string
 }
 
+export interface IAirport {
+  countryCode: string
+  code: string
+  name: string
+}
+
 export const COUNTRIES = [
   { code: 'ca', label: 'Canada' },
   { code: 'cu', label: 'Cuba' },

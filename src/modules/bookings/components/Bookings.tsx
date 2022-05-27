@@ -1,8 +1,8 @@
 const Bookings = () => {
   return (
     <main>
-      <header>
-        <h2>Bookings</h2>
+      <header class="main-header">
+        <h2 class="main-heading">Bookings</h2>
       </header>
     </main>
   )

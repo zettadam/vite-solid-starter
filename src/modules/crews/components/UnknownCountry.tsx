@@ -1,10 +1,13 @@
 const UnknownCountry = () => {
   return (
-    <div class="crew-details">
-      <header>
-        <h3>Unknown Country</h3>
+    <>
+      <header class="details-header">
+        <h3 class="details-heading">Unknown Country</h3>
       </header>
-    </div>
+      <div class="details-content">
+        <p>Ooops! I cannot find this country.</p>
+      </div>
+    </>
   )
 }
 

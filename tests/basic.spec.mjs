@@ -11,7 +11,7 @@ test.describe('Basic', () => {
     await expect(appHeader.locator('h1')).toContainText(
       'SolidJS Starter (Vite)'
     )
-    await expect(main.locator('header > h1')).toContainText('Screen One')
+    await expect(main.locator('.main-heading')).toContainText('Airports')
     await expect(appFooter.locator('.copyright')).toContainText(
       '© Company 2022'
     )
