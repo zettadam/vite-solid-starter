@@ -1,7 +1,8 @@
 /// <reference types="vitest" />
 /// <reference types="vite/client" />
 
-import fs from 'fs'
+import { readFileSync } from 'fs'
+import path from 'path'
 import { defineConfig } from 'vite'
 import solid from 'vite-plugin-solid'
 
@@ -12,8 +13,8 @@ function useHttps() {
 
   try {
     https = {
-      key: fs.readFileSync('../.cert/key.pem'),
-      cert: fs.readFileSync('../.cert/cert.pem'),
+      key: readFileSync('../.cert/key.pem'),
+      cert: readFileSync('../.cert/cert.pem'),
     }
   } catch (e) {}
 
@@ -27,6 +28,9 @@ export default defineConfig({
   },
   plugins: [solid()],
   resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './src'),
+    },
     conditions: ['development', 'browser'],
   },
   server: {

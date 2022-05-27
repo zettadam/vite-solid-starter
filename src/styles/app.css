@@ -1,0 +1,49 @@
+.app-header {
+  margin-block-end: var(--size-4);
+  display: flex;
+}
+.app-header h1 {
+  margin: 0;
+  padding: 1rem 2rem;
+}
+.app-nav {
+  display: flex;
+  flex: 1;
+  column-gap: 2rem;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 2rem;
+}
+
+.app-header a:link,
+.app-header a:visited {
+  text-decoration: none;
+}
+.app-header a:active,
+.app-header a:focus,
+.app-header a:focus-within,
+.app-header a:hover {
+  text-decoration: underline;
+}
+
+.app-nav a.active {
+  font-weight: 700;
+  color: var(--co-color--black);
+}
+
+.app-footer {
+  margin-block-start: var(--size-8);
+}
+
+.color-palette {
+  display: flex;
+  flex: column wrap;
+  gap: 1rem;
+}
+.color-palette > div {
+  padding: var(--size-1) var(--size-2);
+}
+
+p {
+  margin-block-end: var(--size-4);
+}
