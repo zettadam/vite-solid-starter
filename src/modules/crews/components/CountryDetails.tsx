@@ -1,5 +1,5 @@
 import { createMemo, For } from 'solid-js'
-import { Link, useParams } from 'solid-app-router'
+import { Link, Outlet, useParams } from 'solid-app-router'
 
 import { getCountry } from '../actions/countries'
 import { getCountryAirports } from '../actions/airports'
@@ -7,8 +7,8 @@ import { getCountryAirports } from '../actions/airports'
 const CountryDetails = () => {
   const params = useParams()
 
-  const country = createMemo(() => getCountry(params.code))
-  const airports = createMemo(() => getCountryAirports(params.code))
+  const country = createMemo(() => getCountry(params.country))
+  const airports = createMemo(() => getCountryAirports(params.country))
 
   return (
     <div class="details-content">
@@ -30,6 +30,7 @@ const CountryDetails = () => {
       ) : (
         <p>No airports yet</p>
       )}
+      <Outlet />
     </div>
   )
 }

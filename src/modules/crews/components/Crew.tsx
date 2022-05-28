@@ -7,7 +7,7 @@ const Crew = () => {
   const params = useParams()
 
   createEffect(() => {
-    console.log('Crew ID', params.id)
+    console.log('Crew ID', params.crew)
   })
 
   return (

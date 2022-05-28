@@ -2,9 +2,9 @@ import { createEffect, createMemo, For } from 'solid-js'
 import { Link, Outlet, useLocation, useParams } from 'solid-app-router'
 
 import { getCountries } from '../actions/countries'
-import CountrySelector from './CountrySelector'
 
 import '../styles/crews.css'
+
 
 const Crews = () => {
   const params = useParams()
@@ -17,7 +17,7 @@ const Crews = () => {
   })
 
   return (
-    <main>
+    <main class="main--crews">
       <header class="main-header">
         <h2 class="main-heading">Crews</h2>
       </header>
@@ -41,7 +41,12 @@ const Crews = () => {
           )}
         </nav>
       </aside>
-      <Outlet />
+      <div class="content">
+        <Outlet />
+      </div>
+      <footer class="main-footer">
+        <p>Main footer will be here.</p>
+      </footer>
     </main>
   )
 }

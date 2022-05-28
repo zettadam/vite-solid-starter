@@ -7,7 +7,7 @@ import UnknownCountry from './UnknownCountry'
 const Country = () => {
   const params = useParams()
 
-  const country = createMemo(() => getCountry(params.code))
+  const country = createMemo(() => getCountry(params.country))
 
   createEffect(() => {
     console.log('Country', country())
@@ -23,11 +23,11 @@ const Country = () => {
               <Link href={`/crews/${country().code}`}>{country().label}</Link>
             </h3>
           </header>
-          <Outlet />
         </>
       ) : (
         <UnknownCountry />
       )}
+      <Outlet />
     </div>
   )
 }

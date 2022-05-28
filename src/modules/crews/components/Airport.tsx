@@ -7,7 +7,7 @@ import UnknownAirport from './UnknownAirport'
 const Airport = () => {
   const params = useParams()
 
-  const airport = createMemo(() => getAirport(params.airportCode))
+  const airport = createMemo(() => getAirport(params.airport))
 
   return (
     <div class="details airport-details">
@@ -23,6 +23,7 @@ const Airport = () => {
       ) : (
         <UnknownAirport />
       )}
+      
     </div>
   )
 }

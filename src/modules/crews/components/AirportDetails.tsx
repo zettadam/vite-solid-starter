@@ -6,7 +6,7 @@ import { getAirport } from '../actions/airports'
 const AirportDetails = () => {
   const params = useParams()
 
-  const airport = createMemo(() => getAirport(params.airportCode))
+  const airport = createMemo(() => getAirport(params.airport))
 
   return (
     <div class="details-content">

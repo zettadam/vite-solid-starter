@@ -1,3 +1,28 @@
+.main--crews {
+  display: grid;
+  grid-template-areas:
+    'h h h h'
+    'a c c c'
+    'f f f f';
+  grid-template-rows: auto 1fr auto;
+}
+
+.main--crews .main-header {
+  grid-area: h;
+}
+
+.main--crews > aside {
+  grid-area: a;
+}
+
+.main--crews .content {
+  grid-area: c;
+}
+
+.main-footer {
+  grid-area: f;
+}
+
 .crew-listing,
 .crew-listing li {
   display: block;
