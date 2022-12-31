@@ -4,7 +4,7 @@
 import { readFileSync } from 'fs'
 import path from 'path'
 import { defineConfig } from 'vite'
-import solid from 'vite-plugin-solid'
+import solidPlugin from 'vite-plugin-solid'
 
 const unitTestsExclude = ['coverage', 'node_modules', 'public', 'reports']
 
@@ -26,31 +26,29 @@ export default defineConfig({
     minify: false,
     target: 'esnext',
   },
-  plugins: [solid()],
+  plugins: [solidPlugin()],
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
     },
     conditions: ['development', 'browser'],
   },
-  server: {
-    https: useHttps(),
-  },
+  //server: {
+  //  https: useHttps(),
+  //},
   test: {
     coverage: {
       all: true,
       src: ['src'],
       exclude: ['**.config.ts', '**/__tests__'],
     },
-    // solid needs to be inline to work around
-    // a resolution issue in vitest:
-    deps: {
-      inline: [/solid-js/],
-    },
+    setupFiles: ['node_modules/@testing-library/jest-dom/extend-expect.js'],
+    // otherwise, solid would be loaded twice:
+    deps: { registerNodeLoader: true },
     // if you have few tests, try commenting one
     // or both out to improve performance:
-    // threads: false,
-    // isolate: false,
+    threads: false,
+    isolate: false,
     environment: 'jsdom',
     exclude: [...unitTestsExclude, 'tests'],
     globals: true,
